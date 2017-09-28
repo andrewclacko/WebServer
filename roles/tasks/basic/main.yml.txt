@@ -1,0 +1,13 @@
+---
+
+- name: 'installing vim'
+  yum:
+    name: vim-enhanced
+    state: installed
+
+- name: 'installing Vim & Tree'
+  yum:
+    name: vim-enhanced
+    state: installed
+    name: tree
+    state: installed

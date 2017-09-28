@@ -1,0 +1,6 @@
+playbook basic
+---
+- hosts: all
+  become: true
+  roles:
+  - basic

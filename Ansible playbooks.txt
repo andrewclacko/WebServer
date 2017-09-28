@@ -1,0 +1,60 @@
+
+	REBOOT SERVERS WITH MODULE BY ADHOC COMMANDS
+ansible all -i inventory -u vagrant -m command -a "/sbin/reboot" -k --sudo
+
+ansible-doc -l  		(lists all modules)
+ansible-doc <NAME>		(lists contents of a specified module)
+ansible-doc -s <NAME>	(lists playbook examples])
+
+
+hosts file :
+web ansibe_ssh_host=192.168.33.50 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+db ansibe_ssh_host=192.168.33.60 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+app ansibe_ssh_host=192.168.33.70 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+
+
+Playbooks
+
+playbook basic
+---
+- hosts: all
+  become: true
+  roles:
+  - basic
+  
+playbook advanced
+---
+- hosts: web
+  become: true
+  roles:
+  - advanced
+
+  
+roles
+-----------------------------------------------------
+/home/vagrant/mytests/roles/advanced/tasks
+
+- name: 'httpd'
+  yum:
+    name: httpd.x86_64
+    state: installed
+
+- service:
+    name: httpd
+    enabled: yes
+-----------------------------------------------------
+/home/vagrant/mytests/roles/basic/tasks
+
+- name: 'installing vim'
+  yum:
+    name: vim-enhanced
+    state: installed
+
+- name: 'installing Vim & Tree'
+  yum:
+    name: vim-enhanced
+    state: installed
+    name: tree
+    state: installed
+
+	
