@@ -1,0 +1,6 @@
+---
+-
+  become: true
+  hosts: web
+  roles:
+    - apache_stop

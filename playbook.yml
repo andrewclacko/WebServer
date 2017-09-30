@@ -3,4 +3,9 @@
   become: true
   hosts: all
   roles:
-    - basic
+    - basic	
+- 
+  become: true
+  hosts: web
+  roles:
+    - htppd_install

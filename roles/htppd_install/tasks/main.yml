@@ -1,0 +1,14 @@
+---
+
+- name: "installing httpd"
+  yum:
+    name: httpd
+    state: installed
+
+- name: "starting httpd"
+  service:
+    name: httpd
+    state: started
+
+- name: "disbaling iptables"
+  shell: service iptables stop  
