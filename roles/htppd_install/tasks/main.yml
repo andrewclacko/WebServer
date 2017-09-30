@@ -12,3 +12,6 @@
 
 - name: "disbaling iptables"
   shell: service iptables stop  
+  
+- name: "create simple webpage and copy to html"
+  shell: touch /var/www/html/index.html; echo "<strong> hello world <strong>" >> /var/www/html/index.html
