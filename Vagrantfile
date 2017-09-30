@@ -11,7 +11,7 @@ Vagrant.configure(2) do |config|
     acs.vm.box = "nrel/CentOS-6.5-x86_64"
     acs.vm.hostname = "acs"
     acs.vm.network "private_network", ip: "192.168.33.40"
-	config.vm.synced_folder "shared_files", "/home/vagrant"
+	config.vm.synced_folder ".", "/vagrant"
 	 config.vm.provision "ansible_local" do |ansible|
 	 ansible.playbook = "playbook.yml"
 	 end
@@ -29,11 +29,11 @@ Vagrant.configure(2) do |config|
     db.vm.hostname = "db"
     db.vm.network "private_network", ip: "192.168.33.60"
   end
-  
+
     config.vm.define "app" do |app|
     app.vm.box = "nrel/CentOS-6.5-x86_64"
     app.vm.hostname = "app"
     app.vm.network "private_network", ip: "192.168.33.70"
   end
- 
+
 end

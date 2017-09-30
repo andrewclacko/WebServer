@@ -1,1 +1,1 @@
-{"virtualbox":{"/home/vagrant":{"guestpath":"/home/vagrant","hostpath":"C:/Users/andre/Documents/ansible-agentless/shared_files","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/andre/Documents/ansible-agentless","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/andre/Documents/ansible-agentless","disabled":false,"__vagrantfile":true}}}
